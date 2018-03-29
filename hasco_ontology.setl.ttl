@@ -1,0 +1,12 @@
+@prefix prov:          <http://www.w3.org/ns/prov#> .
+@prefix dcat:          <http://www.w3.org/ns/dcat#> .
+@prefix dcterms:       <http://purl.org/dc/terms/> .
+@prefix void:          <http://rdfs.org/ns/void#> .
+@prefix setl:          <http://purl.org/twc/vocab/setl/> .
+@prefix csvw:          <http://www.w3.org/ns/csvw#> .
+@prefix pv:            <http://purl.org/net/provenance/ns#> .
+@prefix uo:            <http://purl.obolibrary.org/obo/UO_> .
+@prefix vstoi:         <http://hadatac.org/ont/vstoi#> .
+@prefix :              <http://hadatac.org/ont/hasco> .
+
+
