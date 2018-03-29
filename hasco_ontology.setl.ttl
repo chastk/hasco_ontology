@@ -5,8 +5,58 @@
 @prefix setl:          <http://purl.org/twc/vocab/setl/> .
 @prefix csvw:          <http://www.w3.org/ns/csvw#> .
 @prefix pv:            <http://purl.org/net/provenance/ns#> .
-@prefix uo:            <http://purl.obolibrary.org/obo/UO_> .
-@prefix vstoi:         <http://hadatac.org/ont/vstoi#> .
 @prefix :              <http://hadatac.org/ont/hasco> .
 
+:script a setl:SemanticETLScript;
+  rdfs:label "HAScO Ontology SETL Script".
 
+
+:table_objectcollectiontype a csvw:Table, setl:Table;
+  prov:wasGeneratedBy [
+    a setl:Extract;
+    prov:used <https://docs.google.com/spreadsheets/d/1Qp1V5mRM_VdudRvBF3ta8xLe6ccyTQCILPofGV2PZbQ/export?exportFormat=csv&gid=1516330555>;
+  ].
+
+
+
+
+
+
+:hasco_ontology a void:Dataset;
+  prov:wasGeneratedBy :script, [
+    a setl:Transform, setl:JSLDT;
+    setl:hasContext '''{
+  "@vocab" :  "http://purl.org/hbgd/kg/",
+  "owl": "http://www.w3.org/2002/07/owl#",
+  "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+  "sio" :     "http://semanticscience.org/resource/",
+  "chear" :   "http://hadatac.org/ont/chear#",
+  "skos" :    "http://www.w3.org/2004/02/skos/core#",
+  "prov" :    "http://www.w3.org/ns/prov#",
+  "dc"   :    "http://purl.org/dc/terms/",
+  "cmo"  :    "http://purl.org/twc/ontologies/cmo.owl#",
+  "rdfs" :    "http://www.w3.org/2000/01/rdf-schema#",
+  "vstoi":    "http://hadatac.org/ont/vstoi#" ,
+  "uo"   :    "<http://purl.obolibrary.org/obo/UO_",
+  "hasco" :    "http://hadatac.org/ont/hasco"
+}''';
+    prov:value '''[{
+	"@id": "http://purl.org/hbgd/kg/ns",
+	"@graph": [{
+		"@id": "http://purl.org/hbgd/kg/ns",
+		"owl:imports": {"@id": "{{row.URI}}", "rdfs:label": "{{row.Ontology}}"}
+	}]
+}]''']
+
+
+
+
+
+
+
+<hasco.ttl> a pv:File;
+    dcterms:format "text/turtle";
+    prov:wasGeneratedBy [
+      a setl:Load;
+      prov:used :hasco_ontology ;
+    ].
