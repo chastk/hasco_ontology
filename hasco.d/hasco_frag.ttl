@@ -1,5 +1,5 @@
-@prefix : <http://hadatac.org/ont/hasco/> .
-@prefix hasco: <http://hadatac.org/ont/hasco/> .
+@prefix : <http://hadatac.org/ont/hasco#> .
+@prefix hasco: <http://hadatac.org/ont/hasco#> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -10,7 +10,8 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix uo: <http://purl.obolibrary.org/obo/UO_> .
 @prefix vstoi: <http://hadatac.org/ont/vstoi#> .
-@base <http://hadatac.org/ont/hasco> .
+@prefix hadatac-sn: <http://hadatac.org/ont/hasco#> .
+@base <http://hadatac.org/ont/hasco#> .
 
 <http://hadatac.org/ont/hasco> rdf:type owl:Ontology ;
             owl:versionIRI <http://hadatac.org/ont/hasco/1.0> ;
