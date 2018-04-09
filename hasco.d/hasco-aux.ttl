@@ -1,0 +1,63 @@
+@prefix : <http://hadatac.org/ont/hasco/> .
+@prefix hasco: <http://hadatac.org/ont/hasco/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sio: <http://semanticscience.org/resource/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix uo: <http://purl.obolibrary.org/obo/UO_> .
+@prefix vstoi: <http://hadatac.org/ont/vstoi#> .
+@base <http://hadatac.org/ont/hasco> .
+
+
+:hasStudyObjectType rdf:type owl:ObjectProperty .
+
+:hasAcronym rdf:type owl:DatatypeProperty .
+
+:hasLabelFragment rdf:type owl:DatatypeProperty .
+
+
+
+:LocationCollection rdf:type owl:Class ;
+    rdfs:subClassOf :ObjectCollection ;
+    rdfs:label "Location Collection"^^xsd:string ;
+    rdfs:comment "Collection of coordinates and/or names locations of a physical region of interest"^^xsd:string ;
+    :hasStudyObjectType sio:Location ;
+    :hasAcronym "LOC"^^xsd:string;
+    :hasLabelFragment "at"^^xsd:string .
+
+:ObjectCollection rdf:type owl:Class ;
+    rdfs:subClassOf owl:Thing ;
+    rdfs:label "Object Collection"^^xsd:string ;
+    rdfs:comment "A collection of samples including other sample collections"^^xsd:string ;
+    :hasStudyObjectType :StudyObjectType ;
+    :hasAcronym "OBJ"^^xsd:string;
+    :hasLabelFragment "object"^^xsd:string .
+
+:SampleCollection rdf:type owl:Class ;
+    rdfs:subClassOf :ObjectCollection ;
+    rdfs:label "Sample Collection"^^xsd:string ;
+    rdfs:comment "collection of material elements sampled from a region of interest or from other samples"^^xsd:string ;
+    :hasStudyObjectType sio:Sample ;
+    :hasAcronym "SPL"^^xsd:string;
+    :hasLabelFragment "sample"^^xsd:string .
+
+:SubjectGroup rdf:type owl:Class ;
+    rdfs:subClassOf :ObjectCollection ;
+    rdfs:label "Subject Group"^^xsd:string ;
+    rdfs:comment "A group of human subjects"^^xsd:string ;
+    :hasStudyObjectType sio:Human ;
+    :hasAcronym "SUBJ"^^xsd:string;
+    :hasLabelFragment "subject"^^xsd:string .
+
+:TimeCollection rdf:type owl:Class ;
+    rdfs:subClassOf :ObjectCollection ;
+    rdfs:label "Time Collection"^^xsd:string ;
+    rdfs:comment "Time Collection"^^xsd:string ;
+    :hasStudyObjectType sio:TimeInterval ;
+    :hasAcronym "TIME"^^xsd:string;
+    :hasLabelFragment "at"^^xsd:string .
+

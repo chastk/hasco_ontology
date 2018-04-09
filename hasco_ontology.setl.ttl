@@ -13,7 +13,7 @@
 @prefix csvw:          <http://www.w3.org/ns/csvw#> .
 @prefix pv:            <http://purl.org/net/provenance/ns#> .
 @prefix hasco:         <http://hadatac.org/ont/hasco#> .
-@prefix hadatac-sn:         <http://hadatac.org/ont/hasco#> .
+@prefix hadatac-sn:    <http://hadatac.org/ont/hasco#> .
 @prefix :              <https://hadatac.org/setl/> .
 @prefix labkey:        <http://chear.tw.rpi.edu/labkey/query/CHEAR%20Production/selectRows.api?schemaName=lists&query.queryName=>.
 
